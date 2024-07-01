@@ -3,10 +3,10 @@
 
 <#
 
-    Description:    1. Executes as a Scheduled Task and checks for VPN or LAN connectivity, if none exits script.
-                    2. Maps all drives found in the registry: HKLM\Software\<customer>
-                    3. After drive mapping concludes a Toast notification is sent to the user.
-                    4. This script will check the tattooed registry and use the values to map the drives.
+    Description:     1. Executes as a Scheduled Task and checks for VPN or LAN connectivity, if none exits script.
+                     2. Maps all drives found in the registry: HKLM\Software\<customer>
+                     3. Checks the tattooed registry and use the values to map the drives.
+                     4. After drive mapping concludes a Toast notification is sent to the user desktop.
 
 #>
 
