@@ -13,6 +13,17 @@
 
 # --[ Set vars ]
 $customer = "mattGPT"
+$logPath  = "C:\ProgramData\$customer\MapDrives"
+$logfile  = "$logPath\MapDrives.log"
+
+if(!(Test-Path $logPath)){ New-Item -Path $logPath -ItemType Directory -Force }
+
+
+# --[ Create log ]
+function Log($message){
+"$(Get-Date -Format "dd-MM-yyyy hh:mm:ss") | $message" | Out-File $logfile -Append
+Write-Host $message
+}
 
 
 # --[ Check connectivity status ]
