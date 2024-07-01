@@ -13,8 +13,9 @@
 
 # --[ Set vars ]
 $customer = "mattGPT"
-$logPath  = "C:\ProgramData\$customer\MapDrives"
-$logfile  = "$logPath\MapDrives.log"
+$feature  = "MapDrives"
+$logPath  = "C:\ProgramData\$customer\$feature"
+$logfile  = "$logPath\$feature.log"
 
 if(!(Test-Path $logPath)){ New-Item -Path $logPath -ItemType Directory -Force }
 
