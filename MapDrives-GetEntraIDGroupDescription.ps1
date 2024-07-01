@@ -40,7 +40,7 @@ if(!(Get-Module -Name Microsoft.Graph.Authentication)){Install-Module Microsoft.
 $certname = "CN=mattGPT"
 $cert     = Get-ChildItem Cert:\CurrentUser\My | Where {$_.Subject -eq $certname} 
 
-Connect-MgGraph -ClientId 024b1844-5d64-495d-b3a4-5c6ef3e07363 -TenantId a235bfda-8672-43b2-ab92-2c08d00090b6 -Certificate $cert
+Connect-MgGraph -ClientId <add your client ID here> -TenantId <add your tenant ID here> -Certificate $cert
 
 
 # --[ Get the User ID from the current device ]
