@@ -14,14 +14,12 @@
 
 
 # --[ Set vars ]
-$ver      = "1.0"
 $customer = "mattGPT"
-$binPath  = "C:\ProgramData\$customer\MapDrives"
-$logfile  = "$binPath\MapDrives.log" 
+$feature  = "MapDrives"
+$logPath  = "C:\ProgramData\$customer\$feature"
+$logfile  = "$logPath\$feature.log"
 
-
-# --[ Create log & script directory ]
-if(!(Test-Path $binPath)){New-Item -Path $binPath -ItemType Directory}
+if(!(Test-Path $logPath)){ New-Item -Path $logPath -ItemType Directory -Force }
 
 
 # --[ Create log ]
@@ -44,8 +42,7 @@ Connect-MgGraph -ClientId <add your client ID here> -TenantId <add your tenant I
 
 
 # --[ Get the User ID from the current device ]
-#$userId = Get-ItemPropertyValue HKCU:"\Software\Microsoft\Windows NT\CurrentVersion\WorkplaceJoin\AADNGC\*" -Name 'UserId'
-$userid = "admin@M365x38250458.onmicrosoft.com" # --[ test user id / comment this out when testing in your own env ]
+$userId = Get-ItemPropertyValue HKCU:"\Software\Microsoft\Windows NT\CurrentVersion\WorkplaceJoin\AADNGC\*" -Name 'UserId'
 
 
 # --[ Get all groups the member is of ]
